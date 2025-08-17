@@ -21,9 +21,13 @@
         }
     </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+        @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
         body {
-            font-family: 'Noto Sans KR', sans-serif;
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+        }
+        .hero-title {
+            font-family: 'Black Han Sans', sans-serif;
         }
         .gradient-bg {
             background: linear-gradient(135deg, #DC2626 0%, #EA580C 100%);
@@ -166,66 +170,32 @@
     </style>
 </head>
 <body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-4">
-                <div class="flex items-center">
-                    <div class="apple-gradient-container">
-                        <img src="apple.png" alt="Apple Logo" class="h-10 w-10 mr-3 apple-circle">
-                    </div>
-                    <span class="text-2xl font-bold text-apple-red">Fresh Apples</span>
-                </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="text-gray-700 hover:text-apple-red transition-colors">홈</a>
-                    <a href="#products" class="text-gray-700 hover:text-apple-red transition-colors">제품</a>
-                    <a href="#about" class="text-gray-700 hover:text-apple-red transition-colors">소개</a>
-                    <a href="#contact" class="text-gray-700 hover:text-apple-red transition-colors">연락처</a>
-                    <a href="index_en.php" class="text-gray-700 hover:text-apple-red transition-colors">English</a>
-                </div>
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-700 hover:text-apple-red">
-                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-            
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="md:hidden hidden">
-                <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
-                    <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-apple-red transition-colors">홈</a>
-                    <a href="#products" class="block px-3 py-2 text-gray-700 hover:text-apple-red transition-colors">제품</a>
-                    <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-apple-red transition-colors">소개</a>
-                    <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-apple-red transition-colors">연락처</a>
-                    <a href="index_en.php" class="block px-3 py-2 text-gray-700 hover:text-apple-red transition-colors">English</a>
-                </div>
-            </div>
-            </div>
-        </div>
-    </nav>
+    <?php $language = 'ko'; ?>
+    <?php include 'nav.php'; ?>
 
     <!-- Hero Section -->
     <section id="home" class="gradient-bg text-white py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
-                    <h1 class="text-5xl md:text-6xl font-bold mb-6">
-                        자연의 선물<br>
-                        <span class="text-apple-light-red">프리미엄 사과</span>
-                    </h1>
-                    <p class="text-xl mb-8 text-red-100">
-                        최고급 품질의 신선한 사과를 직접 경험해보세요. 
-                        자연 그대로의 맛과 영양을 담았습니다.
-                    </p>
+                                         <h1 class="hero-title text-5xl md:text-6xl font-bold mb-6">
+                         자연의 선물<br>
+                         <span class="text-apple-light-red">프리미엄 사과</span>
+                     </h1>
+                                         <p class="text-xl mb-8 text-red-100 hidden md:block">
+                         최고급 품질의 신선한 사과를 직접 경험해보세요. 
+                         자연 그대로의 맛과 영양을 담았습니다.
+                     </p>
+                     <p class="text-xl mb-8 text-red-100 md:hidden">
+                         모바일에서도 주문 가능합니다
+                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <button class="bg-white text-apple-red px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                        <a href="products.php" class="bg-white text-apple-red px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-center">
                             제품 보기
-                        </button>
-                        <button class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-apple-red transition-colors">
+                        </a>
+                        <a href="about.php" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-apple-red transition-colors text-center">
                             더 알아보기
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <div class="flex justify-center apple-hero">
@@ -498,43 +468,13 @@
         </div>
     </footer>
 
-    <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuButton.addEventListener('click', function() {
-            mobileMenu.classList.toggle('hidden');
-        });
-        
-        // Close mobile menu when clicking on a link
-        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-        
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Form submission handling
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('메시지가 성공적으로 전송되었습니다!');
-            this.reset();
-        });
-    </script>
+         <script>
+         // Form submission handling
+         document.querySelector('form').addEventListener('submit', function(e) {
+             e.preventDefault();
+             alert('메시지가 성공적으로 전송되었습니다!');
+             this.reset();
+         });
+     </script>
 </body>
 </html>

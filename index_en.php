@@ -21,9 +21,13 @@
         }
     </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+        @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+        }
+        .hero-title {
+            font-family: 'Black Han Sans', sans-serif;
         }
         .gradient-bg {
             background: linear-gradient(135deg, #DC2626 0%, #EA580C 100%);
@@ -36,7 +40,7 @@
             box-shadow: 0 20px 25px -5px rgba(220, 38, 38, 0.3);
         }
         
-        /* 원형 사과 이미지 스타일 - 색감 유지하면서 그라데이션 가장자리 */
+        /* Circular apple image style - maintaining color while adding gradient edges */
         .apple-circle {
             border-radius: 50%;
             object-fit: cover;
@@ -44,13 +48,13 @@
             transition: all 0.3s ease;
         }
         
-        /* 그라데이션 가장자리 효과를 위한 컨테이너 */
+        /* Container for gradient edge effects */
         .apple-gradient-container {
             position: relative;
             display: inline-block;
         }
         
-        /* 그라데이션 가장자리 효과 */
+        /* Gradient edge effects */
         .apple-gradient-container::before {
             content: '';
             position: absolute;
@@ -69,7 +73,7 @@
             animation: gradientRotate 4s linear infinite;
         }
         
-        /* 그라데이션 회전 애니메이션 */
+        /* Gradient rotation animation */
         @keyframes gradientRotate {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
@@ -83,12 +87,12 @@
             animation-duration: 2s;
         }
         
-        /* 배경에 자연스럽게 어우러지는 효과 */
+        /* Natural blending effect with background */
         .apple-blend {
             filter: drop-shadow(0 0 15px rgba(220, 38, 38, 0.3));
         }
         
-        /* 히어로 배너 전용 스타일 - 확대 효과 제거 및 가장자리 페이드 효과 */
+        /* Hero banner exclusive style - removing zoom effect and adding edge fade effect */
         .hero-apple {
             border-radius: 50%;
             object-fit: cover;
@@ -100,13 +104,13 @@
             transform: none;
         }
         
-        /* 히어로 배너용 그라데이션 컨테이너 */
+        /* Hero banner gradient container */
         .hero-gradient-container {
             position: relative;
             display: inline-block;
         }
         
-        /* 히어로 배너용 가장자리 페이드 효과 */
+        /* Hero banner edge fade effect */
         .hero-gradient-container::before {
             content: '';
             position: absolute;
@@ -125,7 +129,7 @@
             animation: none;
         }
         
-        /* 히어로 배너용 블렌드 효과 */
+        /* Hero banner blend effect */
         .hero-blend {
             filter: drop-shadow(0 0 20px rgba(220, 38, 38, 0.2));
             mask: radial-gradient(circle, 
@@ -142,7 +146,7 @@
                 transparent 100%);
         }
         
-        /* 그라데이션 배경과 자연스럽게 어우러지는 효과 */
+        /* Natural blending effect with gradient background */
         .apple-hero {
             position: relative;
             overflow: hidden;
@@ -166,66 +170,32 @@
     </style>
 </head>
 <body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-4">
-                <div class="flex items-center">
-                    <div class="apple-gradient-container">
-                        <img src="apple.png" alt="Apple Logo" class="h-10 w-10 mr-3 apple-circle">
-                    </div>
-                    <span class="text-2xl font-bold text-apple-red">Fresh Apples</span>
-                </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="text-gray-700 hover:text-apple-red transition-colors">Home</a>
-                    <a href="#products" class="text-gray-700 hover:text-apple-red transition-colors">Products</a>
-                    <a href="#about" class="text-gray-700 hover:text-apple-red transition-colors">About</a>
-                    <a href="#contact" class="text-gray-700 hover:text-apple-red transition-colors">Contact</a>
-                    <a href="index.php" class="text-gray-700 hover:text-apple-red transition-colors">한국어</a>
-                </div>
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-700 hover:text-apple-red">
-                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-            
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="md:hidden hidden">
-                <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
-                    <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-apple-red transition-colors">Home</a>
-                    <a href="#products" class="block px-3 py-2 text-gray-700 hover:text-apple-red transition-colors">Products</a>
-                    <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-apple-red transition-colors">About</a>
-                    <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-apple-red transition-colors">Contact</a>
-                    <a href="index.php" class="block px-3 py-2 text-gray-700 hover:text-apple-red transition-colors">한국어</a>
-                </div>
-            </div>
-            </div>
-        </div>
-    </nav>
+    <?php $language = 'en'; ?>
+    <?php include 'nav.php'; ?>
 
     <!-- Hero Section -->
     <section id="home" class="gradient-bg text-white py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
-                    <h1 class="text-5xl md:text-6xl font-bold mb-6">
-                        Nature's Gift<br>
-                        <span class="text-apple-light-red">Premium Apples</span>
-                    </h1>
-                    <p class="text-xl mb-8 text-red-100">
-                        Experience the finest quality fresh apples directly. 
-                        We preserve the natural taste and nutrition as nature intended.
-                    </p>
+                                         <h1 class="hero-title text-5xl md:text-6xl font-bold mb-6">
+                         Nature's Gift<br>
+                         <span class="text-apple-light-red">Premium Apples</span>
+                     </h1>
+                                         <p class="text-xl mb-8 text-red-100 hidden md:block">
+                         Experience the finest quality fresh apples directly. 
+                         We preserve the natural taste and nutrition as they are.
+                     </p>
+                     <p class="text-xl mb-8 text-red-100 md:hidden">
+                         Available for mobile orders
+                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <button class="bg-white text-apple-red px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                        <a href="products_en.php" class="bg-white text-apple-red px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-center">
                             View Products
-                        </button>
-                        <button class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-apple-red transition-colors">
+                        </a>
+                        <a href="about_en.php" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-apple-red transition-colors text-center">
                             Learn More
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <div class="flex justify-center apple-hero">
@@ -252,7 +222,7 @@
                         </svg>
                     </div>
                     <h3 class="text-xl font-semibold text-gray-900 mb-2">Eco-Friendly Cultivation</h3>
-                    <p class="text-gray-600">We preserve the natural taste by cultivating using organic methods.</p>
+                    <p class="text-gray-600">We preserve the natural taste by cultivating with organic methods.</p>
                 </div>
                 <div class="text-center p-6">
                     <div class="bg-apple-light-red w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -261,7 +231,7 @@
                         </svg>
                     </div>
                     <h3 class="text-xl font-semibold text-gray-900 mb-2">Strict Quality Control</h3>
-                    <p class="text-gray-600">We ensure the highest quality through thorough inspection at each stage.</p>
+                    <p class="text-gray-600">We guarantee the highest quality through thorough inspection at each stage.</p>
                 </div>
                 <div class="text-center p-6">
                     <div class="bg-apple-light-red w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -270,7 +240,7 @@
                         </svg>
                     </div>
                     <h3 class="text-xl font-semibold text-gray-900 mb-2">Fresh Delivery</h3>
-                    <p class="text-gray-600">We deliver fresh to customers within 24 hours after harvest.</p>
+                    <p class="text-gray-600">We deliver fresh apples to customers within 24 hours after harvest.</p>
                 </div>
             </div>
         </div>
@@ -281,7 +251,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Products</h2>
-                <p class="text-xl text-gray-600">Discover premium apples of various varieties</p>
+                <p class="text-xl text-gray-600">Discover various varieties of premium apples</p>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="apple-card bg-white rounded-xl shadow-lg overflow-hidden">
@@ -292,9 +262,9 @@
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-semibold text-gray-900 mb-2">Hongro Apple</h3>
-                        <p class="text-gray-600 mb-4">Popular variety known for its sweet and crisp taste</p>
+                        <p class="text-gray-600 mb-4">Popular variety with sweet and crispy taste</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-2xl font-bold text-apple-red">$15.00</span>
+                            <span class="text-2xl font-bold text-apple-red">₩15,000</span>
                             <button class="bg-apple-red text-white px-4 py-2 rounded-lg hover:bg-apple-dark-red transition-colors">
                                 Buy Now
                             </button>
@@ -309,9 +279,9 @@
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-semibold text-gray-900 mb-2">Yangkwang Apple</h3>
-                        <p class="text-gray-600 mb-4">Premium variety with balanced sweet and tart flavor</p>
+                        <p class="text-gray-600 mb-4">Premium variety with balanced sweet and sour taste</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-2xl font-bold text-apple-red">$18.00</span>
+                            <span class="text-2xl font-bold text-apple-red">₩18,000</span>
                             <button class="bg-apple-red text-white px-4 py-2 rounded-lg hover:bg-apple-dark-red transition-colors">
                                 Buy Now
                             </button>
@@ -326,9 +296,9 @@
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-semibold text-gray-900 mb-2">Aori Apple</h3>
-                        <p class="text-gray-600 mb-4">Fresh and clean taste for a healthy choice</p>
+                        <p class="text-gray-600 mb-4">Healthy choice with fresh and clean taste</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-2xl font-bold text-apple-red">$12.00</span>
+                            <span class="text-2xl font-bold text-apple-red">₩12,000</span>
                             <button class="bg-apple-red text-white px-4 py-2 rounded-lg hover:bg-apple-dark-red transition-colors">
                                 Buy Now
                             </button>
@@ -346,11 +316,11 @@
                 <div>
                     <h2 class="text-4xl font-bold text-gray-900 mb-6">Our Story</h2>
                     <p class="text-lg text-gray-600 mb-6">
-                        For 30 years, we have been dedicated to apple cultivation, 
-                        producing the highest quality apples through harmony with nature.
+                        We have been dedicated to apple cultivation for 30 years, producing the highest quality apples 
+                        through harmony with nature.
                     </p>
                     <p class="text-lg text-gray-600 mb-6">
-                        Our apples, cultivated in a clean environment using organic methods, 
+                        Our apples, cultivated in a clean environment with organic methods, 
                         satisfy both health and taste simultaneously.
                     </p>
                     <div class="grid grid-cols-2 gap-6">
@@ -378,7 +348,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold mb-4">Contact Us</h2>
-                <p class="text-xl text-red-100">Feel free to contact us anytime if you have any questions</p>
+                <p class="text-xl text-red-100">Feel free to contact us if you have any questions</p>
             </div>
             <div class="grid md:grid-cols-2 gap-12">
                 <div>
@@ -389,7 +359,7 @@
                     <div class="space-y-4">
                         <div class="flex items-center">
                             <span class="material-icons mr-3 text-apple-red">location_on</span>
-                            <span>123 Apple Farm, Yeongwol-gun, Gangwon-do</span>
+                            <span>Apple Farm 123, Yeongwol-gun, Gangwon-do</span>
                         </div>
                         <div class="flex items-center">
                             <span class="material-icons mr-3 text-apple-red">phone</span>
@@ -462,11 +432,11 @@
                     <ul class="space-y-2 text-gray-400">
                         <li class="flex items-center">
                             <span class="material-icons mr-2 text-sm">fiber_manual_record</span>
-                            <a href="#" class="hover:text-white transition-colors">About</a>
+                            <a href="about.php" class="hover:text-white transition-colors">About</a>
                         </li>
                         <li class="flex items-center">
                             <span class="material-icons mr-2 text-sm">fiber_manual_record</span>
-                            <a href="#" class="hover:text-white transition-colors">Contact</a>
+                            <a href="index.php#contact" class="hover:text-white transition-colors">Contact</a>
                         </li>
                         <li class="flex items-center">
                             <span class="material-icons mr-2 text-sm">fiber_manual_record</span>
@@ -498,43 +468,13 @@
         </div>
     </footer>
 
-    <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuButton.addEventListener('click', function() {
-            mobileMenu.classList.toggle('hidden');
-        });
-        
-        // Close mobile menu when clicking on a link
-        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-        
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Form submission handling
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Message sent successfully!');
-            this.reset();
-        });
-    </script>
+         <script>
+         // Form submission handling
+         document.querySelector('form').addEventListener('submit', function(e) {
+             e.preventDefault();
+             alert('Message sent successfully!');
+             this.reset();
+         });
+     </script>
 </body>
 </html> 
